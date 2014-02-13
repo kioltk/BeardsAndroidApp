@@ -1,0 +1,24 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="280dp">
+    <ImageView
+        android:id="@+id/exploreImage"
+        android:src="@drawable/beard1"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/exploreText"
+        android:gravity="right"
+        android:lineSpacingMultiplier="0.9"
+        android:text="усики мукачино и смаконтано"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="18dp"
+        android:textSize="36dp"
+        android:maxWidth="220dp"
+        android:layout_alignParentRight="true"
+        android:textColor="#fff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

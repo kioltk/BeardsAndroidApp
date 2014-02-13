@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.agcy.beards.BeardActivity.BeardActivityFragment">
+    <ImageView
+        android:id="@+id/background"
+        android:src="@drawable/beard4"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:id="@+id/content"
+        android:visibility="visible"
+        android:paddingTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:text="Усики с бородой мухаха"
+            android:layout_marginRight="18dp"
+            android:textSize="36dp"
+            android:maxWidth="195dp"
+            android:layout_alignParentRight="true"
+            android:textAllCaps="true"
+            android:textColor="#fff"
+            android:gravity="right"
+            android:lineSpacingMultiplier="0.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:id="@+id/divider"
+            android:layout_marginTop="215dp"
+            android:background="#fff"
+            android:layout_centerHorizontal="true"
+            android:layout_width="220dp"
+            android:layout_height="1px"/>
+        <TextView
+            android:id="@+id/description"
+            android:text=" Эту мощную штуку носят только настоящие мужики \n Каждый раз, когда вы видите лысого чела с заплетённой косичкой в бороде, знайте - у него реально стальные яйца"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/divider"
+            android:layout_above="@+id/guideButton"
+            android:textSize="18dp"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/guideButton"
+            android:text="How to grow"
+            android:background="#00000000"
+            android:textColor="#fff"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popup"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/backgroundBlur"
+            android:src="@drawable/beard4"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:padding="20dp"
+            android:layout_centerInParent="true"
+            android:background="#d0000000"
+            android:layout_margin="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/guideTitle"
+                android:text="Growing"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_below="@+id/guideTitle"
+                android:id="@+id/guideDescription"
+                android:text="Эту мощную штуку носят только настоящие мужики \n Каждый раз, когда вы видите лысого чела с заплетённой косичкой в бороде, знайте - у него реально стальные яйца
+Эту мощную штуку носят только настоящие мужики \n Каждый раз, когда вы видите лысого чела с заплетённой косичкой в бороде, знайте - у него реально стальные яйца"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:id="@+id/divider1"
+                android:background="#fff"
+                android:layout_below="@+id/guideDescription"
+                android:layout_centerHorizontal="true"
+                android:layout_width="220dp"
+                android:layout_height="1px"/>
+            <Button
+                android:text="Got it!"
+                android:id="@+id/popupClose"
+                android:textColor="#fff"
+                android:layout_marginTop="18dp"
+                android:textAllCaps="true"
+                android:background="@null"
+                android:textStyle="italic"
+                android:layout_below="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

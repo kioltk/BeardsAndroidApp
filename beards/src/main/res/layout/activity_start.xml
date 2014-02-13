@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.agcy.beards.StartActivity"
+    android:background="#000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background"
+        android:src="@drawable/beard1"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_white"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/actionbar_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#ffffff"
+        android:typeface="sans"
+        android:textSize="28dp"
+        android:text="Beards"
+        android:layout_toRightOf="@id/actionbar_icon"/>
+    <com.agcy.CustomViews.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="6dp"
+        android:paddingTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/startView"
+        android:background="#000000"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/ic_white"
+            android:scaleType="centerInside"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>
+

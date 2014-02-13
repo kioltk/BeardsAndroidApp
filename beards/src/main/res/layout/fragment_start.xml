@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.agcy.beards.StartActivity.SectionFragment">
+
+    <TextView
+        android:id="@+id/section_info"
+        android:layout_centerHorizontal="true"
+        android:textColor="#f8f8f8"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_above="@+id/start_button"
+        android:maxWidth="260dp"
+        android:text="But not every man knows how to We want to show and explain"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_width="wrap_content" />
+    <Button
+        android:id="@+id/start_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        android:text="Go on"
+        android:textColor="#484848"
+        android:visibility="invisible"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
