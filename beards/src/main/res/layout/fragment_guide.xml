@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.agcy.beards.BeardActivity.BeardActivityFragment">
+    tools:context="com.agcy.beards.GuideActivity.BeardActivityFragment">
     <ImageView
         android:id="@+id/background"
         android:src="@drawable/beard4"
@@ -50,8 +50,8 @@
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/guideButton"
-            android:text="How to grow"
-            android:background="#00000000"
+            android:text="How to"
+            android:background="#80000000"
             android:textColor="#fff"
             android:paddingRight="12dp"
             android:paddingLeft="12dp"
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/guideTitle"
+                android:id="@+id/guideType"
                 android:text="Growing"
                 android:textColor="#fff"
                 android:textSize="25dp"
@@ -88,8 +88,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:layout_below="@+id/guideTitle"
-                android:id="@+id/guideDescription"
+                android:layout_below="@+id/guideType"
+                android:id="@+id/guideContent"
                 android:text="Эту мощную штуку носят только настоящие мужики \n Каждый раз, когда вы видите лысого чела с заплетённой косичкой в бороде, знайте - у него реально стальные яйца
 Эту мощную штуку носят только настоящие мужики \n Каждый раз, когда вы видите лысого чела с заплетённой косичкой в бороде, знайте - у него реально стальные яйца"
                 android:layout_marginTop="20dp"
@@ -101,7 +101,7 @@
             <View
                 android:id="@+id/divider1"
                 android:background="#fff"
-                android:layout_below="@+id/guideDescription"
+                android:layout_below="@+id/guideContent"
                 android:layout_centerHorizontal="true"
                 android:layout_width="220dp"
                 android:layout_height="1px"/>

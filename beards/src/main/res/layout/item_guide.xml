@@ -1,0 +1,27 @@
+<RelativeLayout
+    android:descendantFocusability="blocksDescendants"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="280dp">
+    <com.agcy.CustomViews.MyImageView
+            android:id="@+id/exploreImage"
+            android:src="@drawable/beard4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/exploreText"
+        android:gravity="right"
+        android:lineSpacingMultiplier="0.8"
+        android:paddingBottom="8dp"
+        android:text="усики Trimming и trimming"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="18dp"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:maxWidth="190dp"
+        android:layout_alignParentRight="true"
+        android:textColor="#fff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -58,11 +58,6 @@ public class StartActivity extends Activity {
 
         Imager.context = this;
 
-
-
-
-
-
         final SharedPreferences sp = getSharedPreferences("data",MODE_MULTI_PROCESS);
         final Boolean firstStart = sp.getBoolean("first_start", true);
 

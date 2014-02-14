@@ -1,26 +1,23 @@
 package com.agcy.Models;
 
 import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
 import com.agcy.beards.core.Imager;
 
 /**
- * Created by kiolt_000 on 21.01.14.
+ * Created by kiolt_000 on 14.02.14.
  */
-public class Beard {
-
+public class Guide {
     public int id;
-    public String guide;
     public String title;
     public String description;
+    public String type;
+    public String content;
     public int imageId;
+    public ImageView.ScaleType scaleType;
 
     public Drawable getImageDrawable(){
-       return Imager.getBeard(imageId);
+        return Imager.getDrawable(imageId);
     }
-
-    public Beard(){
-
-    }
-
 }

@@ -32,7 +32,7 @@ public class Imager {
         return drawable;
     }
 
-    public static Drawable getBeard(int id){
+    public static Drawable getDrawable(int id){
         Drawable drawable = context.getResources().getDrawable(id);
         return drawable;
     }

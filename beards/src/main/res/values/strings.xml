@@ -11,5 +11,6 @@
     <string name="title_activity_explore">ExploreActivity</string>
     <string name="title_activity_beard">BeardActivity</string>
     <string name="title_activity_growing">GrowingActivity</string>
+    <string name="title_activity_tip">TipActivity</string>
 
 </resources>

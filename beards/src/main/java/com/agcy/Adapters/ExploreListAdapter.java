@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.agcy.Models.Beard;
+import com.agcy.Models.Guide;
 import com.agcy.beards.R;
 import com.agcy.beards.core.Imager;
 
@@ -17,10 +17,11 @@ import java.util.ArrayList;
 /**
  * Created by kiolt_000 on 21.01.14.
  */
-public class ExploreListAdapter extends ArrayAdapter<Beard> {
-
-    public ExploreListAdapter(Context context,ArrayList<Beard> items) {
-        super(context,R.layout.explore_list_item,items);
+public class ExploreListAdapter extends ArrayAdapter<Guide> {
+    Context context;
+    public ExploreListAdapter(Context context,ArrayList<Guide> guides) {
+        super(context,R.layout.item_guide, guides);
+        this.context = context;
     }
 
     @Override
@@ -33,19 +34,24 @@ public class ExploreListAdapter extends ArrayAdapter<Beard> {
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        ViewGroup view = (ViewGroup) inflater.inflate(R.layout.explore_list_item, parent, false);
+        ViewGroup view = (ViewGroup) inflater.inflate(R.layout.item_guide, parent, false);
+
+
 
         ImageView imageView = (ImageView) view.findViewById(R.id.exploreImage);
         TextView textView = (TextView) view.findViewById(R.id.exploreText);
 
-        Beard beard = getItem(position);
-
-        imageView.setImageDrawable(Imager.getBeard(beard.imageId));
-        textView.setText(beard.title);
 
 
+        Guide guide = getItem(position);
+
+        imageView.setImageDrawable(Imager.getDrawable(guide.imageId));
+        if(guide.scaleType!=null)
+            imageView.setScaleType(guide.scaleType);
+        textView.setText(guide.title);
 
         return view;
+
     }
 
 

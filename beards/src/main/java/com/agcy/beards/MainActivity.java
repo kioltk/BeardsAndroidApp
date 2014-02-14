@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,7 +26,6 @@ import java.util.TimerTask;
 
 public class MainActivity extends Activity {
 
-    static Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new PlaceholderFragment(this))
                     .commit();
         }
         final ImageView background = (ImageView) findViewById(R.id.background);
@@ -84,10 +84,17 @@ public class MainActivity extends Activity {
 
         }, 6L * 1000, 6L * 1000);
 
-        mContext = this;
 
     }
 
+    @Override
+    public void onResume(){
+
+        super.onResume();
+
+        Imager.context = this;
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,27 +116,144 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
 
-        public PlaceholderFragment() {
+    Boolean aboutOpened = false;
+
+    public void aboutClick(View view) {
+
+        if(aboutOpened == null)
+            return;
+
+        final View container =  findViewById(R.id.container);
+        final View about = findViewById(R.id.about);
+
+        if(!aboutOpened){
+
+
+            final Animation fadeIn = new AlphaAnimation(0, 1);
+            fadeIn.setInterpolator(new AccelerateInterpolator()); // and this
+            fadeIn.setStartOffset(0);
+            fadeIn.setDuration(750);
+            fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    aboutOpened = true;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            final Animation fadeOut = new AlphaAnimation(1, 0);
+            fadeOut.setInterpolator(new AccelerateInterpolator()); // and this
+            fadeOut.setStartOffset(0);
+            fadeOut.setDuration(250);
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    container.setVisibility(View.GONE);
+                    about.setVisibility(View.VISIBLE);
+                    about.startAnimation(fadeIn);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            container.startAnimation(fadeOut);
+
+            ((Button)view).setText("Menu");
+        }else{
+
+
+            final Animation fadeIn = new AlphaAnimation(0, 1);
+            fadeIn.setInterpolator(new AccelerateInterpolator()); // and this
+            fadeIn.setStartOffset(0);
+            fadeIn.setDuration(750);
+            fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    aboutOpened = false;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            final Animation fadeOut = new AlphaAnimation(1, 0);
+            fadeOut.setInterpolator(new AccelerateInterpolator()); // and this
+            fadeOut.setStartOffset(0);
+            fadeOut.setDuration(250);
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    about.setVisibility(View.GONE);
+                    container.setVisibility(View.VISIBLE);
+                    container.startAnimation(fadeIn);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            about.startAnimation(fadeOut);
+
+            ((Button)view).setText("About");
+
+        }
+
+        aboutOpened = null;
+
+    }
+
+    public static class PlaceholderFragment extends Fragment {
+        Context context;
+        public PlaceholderFragment(Context context) {
+            this.context = context;
         }
         public Intent getNavigationIntent(int position){
-           Intent intent =  new Intent(mContext, MainActivity.class);
-
+           Intent intent =  new Intent(context, ExploreActivity.class);
+            Bundle bundle = new Bundle();
             switch (position){
                 case 0:
-                    intent = new Intent(mContext, ExploreActivity.class);
+                    bundle.putString("type","beard");
                     break;
                 case 1:
-                    intent = new Intent(mContext, MainActivity.class);
+                    bundle.putString("type","tip");
                     break;
                 case 2:
-                    intent = new Intent(mContext, MainActivity.class);
+                    //intent = new Intent(context, MainActivity.class);
                     break;
             }
+            intent.putExtras(bundle);
             return intent;
         }
         public View.OnClickListener getNavigationListener(final int position){
@@ -141,7 +265,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(View v) {
 
-                    mContext.startActivity(intent);
+                    context.startActivity(intent);
                 }
             };
 
@@ -152,13 +276,13 @@ public class MainActivity extends Activity {
             Drawable drawable = null;
             switch (position){
                 case 0:
-                    drawable = mContext.getResources().getDrawable(R.drawable.search);
+                    drawable = context.getResources().getDrawable(R.drawable.search);
                     break;
                 case 1:
-                    drawable = mContext.getResources().getDrawable(R.drawable.chainsaw);
+                    drawable = context.getResources().getDrawable(R.drawable.chainsaw);
                     break;
                 case 2:
-                    drawable = mContext.getResources().getDrawable(R.drawable.ic_white);
+                    drawable = context.getResources().getDrawable(R.drawable.ic_white);
                     break;
             }
             return drawable;
@@ -200,7 +324,7 @@ public class MainActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            for(int i=0;i<1;i++){
+            for(int i=0;i<2;i++){
 
                 View navigationButton = getButton(inflater, i);
                 ((ViewGroup) rootView).addView(navigationButton);

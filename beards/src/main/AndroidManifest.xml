@@ -38,14 +38,11 @@
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name="com.agcy.beards.BeardActivity"
+            android:name=".GuideActivity"
             android:label="@string/title_activity_beard"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
-        <activity
-            android:name="com.agcy.beards.core.GrowingActivity"
-            android:label="@string/title_activity_growing" >
-        </activity>
+
     </application>
 
 </manifest>

@@ -18,28 +18,33 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.agcy.Models.Beard;
+import com.agcy.Models.Guide;
 import com.agcy.beards.core.Library;
 
-public class BeardActivity extends Activity {
+public class GuideActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beard);
-
-        int id =  getIntent().getExtras().getInt("id", 3);
-        Beard beard = Library.get(id);
-
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment(beard, this, getFragmentManager()))
-                    .commit();
+        setContentView(R.layout.activity_guide);
+        Bundle bundle = getIntent().getExtras();
+        String type = bundle.getString("type");
+        int id =  bundle.getInt("id", 0);
+        Guide guide = null;
+        if(type.equals("beard")){
+            guide = Library.getBeard(id);
+            ((TextView)findViewById(R.id.actionBarTitle)).setText("beard");
         }
 
+        if(type.equals("tip")){
+            guide = Library.getTip(id);
 
-        ((TextView)findViewById(R.id.actionBarTitle)).setText("beard");
 
+            ((TextView)findViewById(R.id.actionBarTitle)).setText("tip");
+        }
+        getFragmentManager().beginTransaction()
+                .add(R.id.container, new GuideFragment(guide, this, getFragmentManager()))
+                .commit();
     }
 
 
@@ -67,23 +72,21 @@ public class BeardActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
 
-        Beard beard;
+    public static class GuideFragment extends Fragment {
+
+        Guide guide;
         Context mContext;
         FragmentManager fm;
-        public PlaceholderFragment(Beard beard, Context context, FragmentManager fm) {
-            this.beard = beard;
+        public GuideFragment(Guide guide, Context context, FragmentManager fm) {
+            this.guide = guide;
             mContext = context;
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            final View rootView = inflater.inflate(R.layout.fragment_beard, container, false);
+                                 Bundle savedInstanceState) {
+            final View rootView = inflater.inflate(R.layout.fragment_guide, container, false);
 
             TextView titleView = (TextView) rootView.findViewById(R.id.title);
             TextView descriptionView = (TextView) rootView.findViewById(R.id.description);
@@ -92,13 +95,15 @@ public class BeardActivity extends Activity {
             final Button guideButton = (Button) rootView.findViewById(R.id.guideButton);
             Button closeButton = (Button) rootView.findViewById(R.id.popupClose);
 
+            TextView guideTypeView = (TextView) rootView.findViewById(R.id.guideType);
+            TextView guideContentView =  (TextView) rootView.findViewById(R.id.guideContent);
 
             final View contentView = rootView.findViewById(R.id.content);
             final View popupView = rootView.findViewById(R.id.popup);
 
-            titleView.setText(beard.title.replace(" ","\n"));
-            descriptionView.setText(beard.description);
-            backgroundView.setImageDrawable(beard.getImageDrawable());
+            titleView.setText(guide.title.replace(" ","\n"));
+            descriptionView.setText(guide.description);
+            backgroundView.setImageDrawable(guide.getImageDrawable());
 
             final Animation fadeIn = new AlphaAnimation(0, 1);
             fadeIn.setInterpolator(new AccelerateInterpolator()); // and this
@@ -155,6 +160,8 @@ public class BeardActivity extends Activity {
             });
 
 
+            guideTypeView.setText(guide.type);
+            guideContentView.setText(guide.content);
 
 
 
@@ -267,5 +274,7 @@ public class BeardActivity extends Activity {
 
 
     }
+
+
 
 }
