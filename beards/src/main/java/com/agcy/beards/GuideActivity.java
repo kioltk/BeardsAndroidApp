@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.agcy.Models.Guide;
+import com.agcy.beards.Models.Guide;
 import com.agcy.beards.core.Library;
 
 public class GuideActivity extends Activity {

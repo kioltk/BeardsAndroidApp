@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.agcy.CustomViews;
+package com.agcy.beards.CustomViews;
 
 import android.support.v4.view.ViewPager;
 

@@ -6,16 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.agcy.Adapters.ExploreListAdapter;
-import com.agcy.Models.Guide;
+import com.agcy.beards.Adapters.ExploreListAdapter;
+import com.agcy.beards.Models.Guide;
 import com.agcy.beards.core.Library;
 
 import java.util.ArrayList;
@@ -27,6 +25,8 @@ public class ExploreActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explore);
+
+        Library.context = this;
 
         Bundle bundle = getIntent().getExtras();
         String type = bundle.getString("type");
@@ -45,34 +45,12 @@ public class ExploreActivity extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.explore, menu);
-        return true;
 
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     public void backClick(View view) {
         onBackPressed();
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
     public static class ExploreFragment extends Fragment {
 
         Context context;
@@ -90,9 +68,9 @@ public class ExploreActivity extends Activity {
 
             ArrayList<Guide> guides =null;
             if(type.equals("beard"))
-                guides = Library.beards;
+                guides = Library.getBeardsStyles();
             if(type.equals("tip"))
-                guides = Library.tips;
+                guides = Library.getTips();
             ExploreListAdapter exploreAdapter = new ExploreListAdapter(context, guides);
             exploreList.setAdapter(exploreAdapter);
             exploreList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

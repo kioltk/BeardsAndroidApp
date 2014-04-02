@@ -31,7 +31,7 @@
         android:textSize="28dp"
         android:text="Beards"
         android:layout_toRightOf="@id/actionbar_icon"/>
-    <com.agcy.CustomViews.CirclePageIndicator
+    <com.agcy.beards.CustomViews.CirclePageIndicator
         android:id="@+id/indicator"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -45,13 +45,14 @@
         android:id="@+id/startView"
         android:background="#000000"
         android:visibility="visible"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
             android:src="@drawable/ic_white"
             android:scaleType="centerInside"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 </RelativeLayout>
 

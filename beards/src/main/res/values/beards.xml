@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="beard_names">
+        <item
+            >Full beard</item>
+        <item>
+            Goatee and Mustache</item>
+        <item>
+            Hollywoodean
+        </item>
+        <item>
+            Balbo
+        </item>
+        <item>
+            Goatee
+        </item>
+    </string-array>
+
+    <string-array
+        name="beard_descriptions">
+        <item
+            >The full beard is the classic expression of the male beard. all about beards strongly recommends the full beard as the best choice for those who can grow a full beard.</item>
+        <item>
+            The goatee and mustache combination is one of the most popular beard styles. It is a good choice for those with good growth in the mustache and chin areas but with weak growth on the cheeks.</item>
+        <item>
+            The extended goatee is a variation of the goatee and mustache. Further variations are possible by adjusting the angles or the shape of the extensions.
+        </item>
+        <item>
+            The balbo is a variation of the goatee and mustache. In this case, the goatee and mustache are not connected. The goatee is sculpted into a shape similar to an inverted letter "T". Another variation is to omit the mustache.
+        </item>
+        <item>
+            The goatee is essentially the facial hair on the chin below the lower lip. The width of the goatee typically is about the same as the width of the mouth.
+        </item>
+    </string-array>
+
+    <string-array
+        name="beard_contents">
+        <item
+            >Follow the instructions on the growing a beard page. When growing a full beard, be sure to define its shape properly. See: Designing a neck line for your full beard. For the cheek line, leave it natural. If you feel the natural cheek line is too high, define a line at an angle from the sideburn in front of the ear down to the outer edge of the mustache. Do not define the cheek line too low. A too-low cheek line gives the appearance of a beard that\'s been gutted. Also see: Choosing a cheek line for your full beard.</item>
+        <item>
+            When growing a goatee and mustache for the first time, it is advisable to allow a larger area to grow than the size that you think that you would like. This will allow you more flexibility in determining the size of the coverage area for the goatee and mustache. Alternatively, you could start out as if you are growing a full beard and let all of your facial hair grow. Once you have achieved enough growth to make a proper determination, then you can shape and trim it down to the desired size. The typical shape of the goatee and mustache is similar to an oval, with the mustache forming the top of the oval. You may experiment with variations on the shape, but it is a good idea to start out with the oval-like shape for your first time.</item>
+        <item>
+            When growing a extended goatee for the first time, it is advisable to allow a larger area to grow than the size that you think that you would like. Once you have achieved enough growth to make a proper determination, then you can shape and trim it down to the desired size. The extensions typically are defined by extending a horizontal line from the corners of the mouth back towards each ear, with a curve connecting the ends of the two extensions.
+
+Alternatively, starting with an existing full beard, you could trim it down into the desired shape of the extended goatee. From an existing goatee and mustache, you could allow the extensions to start growing out.
+        </item>
+        <item>
+When growing a balbo for the first time, it is advisable to allow a larger area to grow than the size that you think that you would like. Once you have achieved enough growth to make a proper determination, then you can shape and trim it down to the desired size and shape. Alternatively, starting with an existing full beard or existing goatee and mustache, you could trim down into the shape of the balbo.
+        </item>
+        <item>
+            Allow the hair below the lower lip to grow. Define the sides as vertical lines or make them slightly curved. Round off the shape at the bottom of the chin.
+        </item>
+    </string-array>
+
+    <array
+        name="beard_images">
+        <item
+            >@drawable/beard1</item>
+        <item
+            >@drawable/beard4</item>
+        <item
+            >@drawable/hollywoodian</item>
+        <item>
+            @drawable/balbo
+        </item>
+        <item>
+            @drawable/goatee
+        </item>
+    </array>
+    <string-array name="beard_scaletype">
+        <item>none</item>
+        <item>center_crop</item>
+        <item>center_crop</item>
+        <item>center_crop</item>
+        <item>center_crop</item>
+    </string-array>
+</resources>

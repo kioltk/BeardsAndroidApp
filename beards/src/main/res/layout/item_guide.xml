@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="280dp">
-    <com.agcy.CustomViews.MyImageView
+    <com.agcy.beards.CustomViews.MyImageView
             android:id="@+id/exploreImage"
             android:src="@drawable/beard4"
             android:layout_width="match_parent"
@@ -19,7 +19,6 @@
         android:layout_margin="18dp"
         android:textAllCaps="true"
         android:textSize="30dp"
-        android:maxWidth="190dp"
         android:layout_alignParentRight="true"
         android:textColor="#fff"
         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.agcy.CustomViews;
+package com.agcy.beards.CustomViews;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -26,6 +26,7 @@ public class MyImageView extends ImageView {
         if(getScaleType()==ScaleType.CENTER_CROP)
             super.onMeasure(widthMeasureSpec,heightMeasureSpec);
         else{
+            //align top
             int width = MeasureSpec.getSize(widthMeasureSpec);
             int height = width * getDrawable().getIntrinsicHeight() / getDrawable().getIntrinsicWidth();
             setMeasuredDimension(width, height);

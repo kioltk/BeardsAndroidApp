@@ -1,4 +1,4 @@
-package com.agcy.Adapters;
+package com.agcy.beards.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.agcy.Models.Guide;
+import com.agcy.beards.Models.Guide;
 import com.agcy.beards.R;
 import com.agcy.beards.core.Imager;
 

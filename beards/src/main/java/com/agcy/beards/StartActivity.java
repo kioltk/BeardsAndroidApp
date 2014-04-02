@@ -22,7 +22,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.agcy.CustomViews.CirclePageIndicator;
+import com.agcy.beards.CustomViews.CirclePageIndicator;
 import com.agcy.beards.core.Imager;
 
 import java.util.Locale;
